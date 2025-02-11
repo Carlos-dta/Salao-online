@@ -1,0 +1,69 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container principal */
+.maintenance-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(231, 218, 218, 0.9);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Cabeçalho */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Texto principal */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Link de contato */
+.contact a {
+    color: #ffdf91;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color:#fff;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
