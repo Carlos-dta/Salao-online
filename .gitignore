@@ -68,6 +68,7 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 
-public
+# Ignorar esses arquivos
+public/
 *script.js
 *agendamento.js
