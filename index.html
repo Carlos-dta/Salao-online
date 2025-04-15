@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="16x16"  href="favicon.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="34h7GE7SsU0C1tJaNh3tJnnrDEWi2qF2vWPgPJdSOmw">
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
     <script type="module" src="script.js" defer></script>
@@ -50,12 +51,12 @@
              required
            />
    
-           <label for="email">E-mail:</label>
+           <label for="phone">Telefone:</label>
            <input
-             type="email"
-             id="email"
-             name="email"
-             placeholder="Seu e-mail"
+             type="tel"
+             id="phone"
+             name="phone"
+             placeholder="(11) 91234-5678"
              required
            />
    
@@ -80,22 +81,23 @@
            <button class="hour" style="display: none;"></button>
            <button type="submit">Agendar</button>
          </form>
-       </div>
-     </section>
-
-    <script src="agendamento.js"></script>
-
-    <div id="message" style="display: none; color: red"></div>
-
-    <script>
-      const menuToggle = document.getElementById('menuToggle')
-      const navLinks = document.getElementById('navLinks')
-  
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('show')
-      })
+        </div>
+        <div id="message" class="success-msg" style="display: none; color: red;"></div>
+      </section>
+      
+      <script type="module" src="agendamento.js"></script>   
+      
+      <!-- menu lateral -->
+      <script>
+        const menuToggle = document.getElementById('menuToggle')
+        const navLinks = document.getElementById('navLinks')
+        
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show')
+        })
     </script>
 
+    <!-- Movimento -->
     <script>  
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -109,8 +111,29 @@
       threshold: 0.2
     });
     observer.observe(document.getElementById('formSection'));
-
     </script>
+
+    <script>
+      const phoneInput = document.getElementById("phone")
+      phoneInput.addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (value.length > 11) {
+          value = value.slice(0, 11)
+        }
+
+        if (value.length > 6) {
+          value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3");
+        } else if (value.length > 2) {
+          value = value.replace(/^(\d{2})(\d{0,5})/, "($1) $2");
+        } else {
+          value = value.replace(/^(\d*)/, "($1");
+        }
+
+        e.target.value = value;
+
+      })
+    </script>
+
     
   </body>
 </html>
