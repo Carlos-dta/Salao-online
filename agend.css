@@ -56,7 +56,7 @@ body {
 }
 
 .appointment-button {
-    background-color: #263442;
+    background-color: #f48fb1;
     color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -94,7 +94,7 @@ body {
 
 button {
     margin-top: 10px;
-    background-color: #3498db;
+    background: #8f8fcf;
     color: white;
     padding: 10px 20px;
     border: none;

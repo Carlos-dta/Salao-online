@@ -72,3 +72,4 @@ node_modules/
 public/
 *script.js
 *agendamento.js
+*login.html
